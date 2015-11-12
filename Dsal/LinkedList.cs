@@ -14,7 +14,10 @@ namespace Dsal
 
         public LinkedList(IEnumerable<int> contents)
         {
-
+            foreach(var item in contents)
+            {
+                Add(item);
+            }
         }
 
         public void Add(int item)
@@ -58,6 +61,17 @@ namespace Dsal
                 {
                     tail = prevNode;
                 }
+            }
+            count--;
+        }
+
+        public void Visit(Action<int> callback)
+        {
+            Node currNode = head;
+            while (currNode != null)
+            {
+                callback(currNode.Data);
+                currNode = currNode.Next;
             }
         }
 
