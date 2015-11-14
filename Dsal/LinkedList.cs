@@ -35,6 +35,74 @@ namespace Dsal
             count++;
         }
 
+        // 1--->2---->3--->4---->5
+        //
+        //
+        public void RemoveNthFromLast(int n)
+        {
+            Node currNode = head;
+            Node nthNode = null;
+            Node nMinus1stNode = null;
+            int currentNodeIndex = 1;
+            while(currNode != null)
+            {
+                if(nthNode != null)
+                {
+                    nMinus1stNode = nthNode;
+                    nthNode = nthNode.Next;
+                }
+                if(currentNodeIndex == n)
+                {
+                    nthNode = head;
+                }
+                currNode = currNode.Next;
+                currentNodeIndex++;
+            }
+
+            RemoveNode(nthNode, nMinus1stNode);
+            
+        }
+
+        // 1--->2--->3--->4
+        // ====>
+        // 4--->3---->2---->1
+        public void Reverse()
+        {
+            Node currNode = head;
+            Node prevNode = null;
+
+            while(currNode != null)
+            {
+                var nextNode = currNode.Next;
+                currNode.Next = prevNode;
+                prevNode = currNode;
+                currNode = nextNode;
+            }
+            tail = head;
+            head = prevNode;
+        }
+
+        private void RemoveNode(Node nodeToRemove, Node prevNode)
+        {
+            if (nodeToRemove == null) return;
+
+            if (prevNode == null)
+            {
+                head = nodeToRemove.Next;
+                if (tail == nodeToRemove)
+                {
+                    tail = nodeToRemove.Next;
+                }
+            }
+            else
+            {
+                prevNode.Next = nodeToRemove.Next;
+                if (tail == nodeToRemove)
+                {
+                    tail = prevNode;
+                }
+            }
+        }  
         public void Remove(int item)
         {
             Node currentNode = head;
@@ -46,22 +114,7 @@ namespace Dsal
                 currentNode = currentNode.Next;
             }
             if (currentNode == null) throw new KeyNotFoundException("Given item was not found");
-            if(prevNode == null)
-            {
-                head = currentNode.Next;
-                if(tail == currentNode)
-                {
-                    tail = currentNode.Next;
-                }
-            }
-            else
-            {
-                prevNode.Next = currentNode.Next;
-                if (tail == currentNode)
-                {
-                    tail = prevNode;
-                }
-            }
+            RemoveNode(currentNode, prevNode);
             count--;
         }
 
