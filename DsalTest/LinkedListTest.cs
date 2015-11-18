@@ -10,6 +10,18 @@ namespace DsalTest
     public class LinkedListTest
     {
         [TestMethod]
+        public void Delete_Duplicates_Verify_Data()
+        {
+            LinkedList list = new LinkedList(new int[] { 1,2,1,3,3,5 });
+
+            list.DeleteDuplicates();
+
+            List<int> itemsVisited = new List<int>();
+            list.Visit((temp) => itemsVisited.Add(temp));
+
+            itemsVisited.Should().BeEquivalentTo(1,2,3,5);
+        }
+        [TestMethod]
         public void Visit_One_Node_List_Shoule_Be_Success()
         {
             LinkedList list = new LinkedList(new int[] { 5});

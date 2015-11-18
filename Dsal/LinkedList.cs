@@ -20,6 +20,29 @@ namespace Dsal
             }
         }
 
+        public void DeleteDuplicates()
+        {
+            Node currNode = head;
+            Node previous = null;
+            Dictionary<int, bool> valuesHash = new Dictionary<int, bool>();
+            //
+            // 1-->2-->1-->3
+            //
+            while(currNode != null)
+            {
+                if (valuesHash.ContainsKey(currNode.Data))
+                {
+                    previous.Next = currNode.Next; 
+                }
+                else
+                {
+                    valuesHash.Add(currNode.Data, true);
+                    previous = currNode;
+                }
+                currNode = currNode.Next;
+            }
+        }
+
         public void Add(int item)
         {
             var newNode = new Node() { Data = item };
