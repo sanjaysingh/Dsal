@@ -110,7 +110,7 @@ namespace Dsal
 
         public void VisitPreorderRecursive(Action<int> callback)
         {
-
+            VisitPreorderRecursive(root, callback);
         }
         private void VisitPreorderRecursive(BSTNode nodeToVisit, Action<int> callback)
         {

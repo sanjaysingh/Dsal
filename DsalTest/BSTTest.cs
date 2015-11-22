@@ -24,7 +24,7 @@ namespace DsalTest
             List<int> visitedData = new List<int>();
             bst.VisitPostorderNonrecursive(value => visitedData.Add(value));
 
-            visitedData.Should().BeEquivalentTo(2, 1, 4, 5, 3);
+            visitedData.Should().ContainInOrder(2, 1, 4, 5, 3);
 
         }
 
@@ -43,7 +43,7 @@ namespace DsalTest
             List<int> visitedData = new List<int>();
             bst.VisitPreorderNonrecursive(value => visitedData.Add(value));
 
-            visitedData.Should().BeEquivalentTo(dataToInsert);
+            visitedData.Should().ContainInOrder(dataToInsert);
 
         }
 
@@ -114,9 +114,9 @@ namespace DsalTest
             dataToInsert.ForEach(value => bst.Add(value));
 
             List<int> visitedData = new List<int>();
-            bst.VisitInorderRecursive(value => visitedData.Add(value));
+            bst.VisitPreorderRecursive(value => visitedData.Add(value));
 
-            visitedData.Should().BeEquivalentTo(dataToInsert);
+            visitedData.Should().ContainInOrder(dataToInsert);
         }
 
         [TestMethod]
@@ -131,9 +131,9 @@ namespace DsalTest
             dataToInsert.ForEach(value => bst.Add(value));
 
             List<int> visitedData = new List<int>();
-            bst.VisitInorderRecursive(value => visitedData.Add(value));
+            bst.VisitPostorderRecursive(value => visitedData.Add(value));
 
-            visitedData.Should().BeEquivalentTo(1,2,4,3,5);
+            visitedData.Should().ContainInOrder(1,2,4,3,5);
 
         }
     }
