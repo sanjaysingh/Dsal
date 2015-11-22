@@ -136,5 +136,83 @@ namespace DsalTest
             visitedData.Should().ContainInOrder(1,2,4,3,5);
 
         }
+
+        [TestMethod]
+        public void Remove_LeafNode_Verify_Order()
+        {
+            BST bst = new BST();
+            //                      5
+            //                  3
+            //              2       4
+            //          1
+            List<int> dataToInsert = new List<int>() { 5, 3, 2, 1, 4 };
+            dataToInsert.ForEach(value => bst.Add(value));
+
+            bst.Remove(1);
+            List<int> visitedData = new List<int>();
+            bst.VisitInorderRecursive(value => visitedData.Add(value));
+
+            visitedData.Should().ContainInOrder(2, 3, 4, 5);
+        }
+
+        [TestMethod]
+        public void Remove_NodeWithOnlyLeftChild_Verify_Order()
+        {
+            BST bst = new BST();
+            //                      5
+            //                  3
+            //              2       4
+            //          1
+            List<int> dataToInsert = new List<int>() { 5, 3, 2, 1, 4 };
+            dataToInsert.ForEach(value => bst.Add(value));
+
+            bst.Remove(2);
+            List<int> visitedData = new List<int>();
+            bst.VisitInorderRecursive(value => visitedData.Add(value));
+
+            visitedData.Should().ContainInOrder(1, 3, 4, 5);
+        }
+
+        [TestMethod]
+        public void Remove_NodeWithLeftAndRightChild_Verify_Order()
+        {
+            BST bst = new BST();
+            //                      5
+            //                  3
+            //              2       4
+            //          1
+            List<int> dataToInsert = new List<int>() { 5, 3, 2, 1, 4 };
+            dataToInsert.ForEach(value => bst.Add(value));
+
+            bst.Remove(3);
+            List<int> visitedData = new List<int>();
+            bst.VisitInorderRecursive(value => visitedData.Add(value));
+
+            visitedData.Should().ContainInOrder(1, 2, 4, 5);
+        }
+        [TestMethod]
+        public void Remove_NodeRightWhichHasLeft_Verify_Order()
+        {
+            BST bst = new BST();
+            //                      7
+            //                  3
+            //              2       6
+            //          1       4
+            //                      5
+            List<int> dataToInsert = new List<int>() { 7,3,2,6,5,1,4};
+            dataToInsert.ForEach(value => bst.Add(value));
+
+            bst.Remove(3);
+           
+            List<int> visitedData = new List<int>();
+            bst.VisitInorderRecursive(value => visitedData.Add(value));
+
+            visitedData.Should().ContainInOrder(1, 2, 4, 5,6,7);
+
+            bst.Add(3);
+            visitedData = new List<int>();
+            bst.VisitInorderRecursive(value => visitedData.Add(value));
+            visitedData.Should().ContainInOrder(1, 2, 3, 4, 5, 6, 7);
+        }
     }
 }

@@ -10,6 +10,80 @@ namespace Dsal
     {
         private BSTNode root;
 
+        #region Find
+
+        public void Find(int value, ref BSTNode valueNode, ref BSTNode valueParentNode)
+        {
+            Find(value, root, null, ref valueNode, ref valueParentNode);
+        }
+
+        private void Find(int value, BSTNode searchingNode, BSTNode searchingNodeParent, ref BSTNode valueNode, ref BSTNode valueParentNode)
+        {
+            if (searchingNode == null) return;
+            if (searchingNode.Data == value)
+            {
+                valueNode = searchingNode;
+                valueParentNode = searchingNodeParent;
+            }
+            else if (value < searchingNode.Data)
+            {
+                Find(value, searchingNode.Left, searchingNode, ref valueNode, ref valueParentNode);
+            }
+            else
+            {
+                Find(value, searchingNode.Right, searchingNode, ref valueNode, ref valueParentNode);
+            }
+        }
+
+        #endregion
+
+        #region Remove node
+
+        public void Remove(int valueToRemove)
+        {
+            // 1. remove 6.         8
+            //                  6
+            //
+            // 2. Remove 6          8
+            //                  6
+            //              2       7
+            //
+            // 
+            // 3. Remove 6.         9
+            //                  6
+            //              2       8
+            //                  7
+            //
+            BSTNode valueNode = null, valueParentNode = null;
+            Find(valueToRemove, ref valueNode, ref valueParentNode);
+
+            if (valueNode == null) return;
+
+            if (valueNode.Right == null)
+            {
+                if (valueParentNode == null) root = valueNode.Left;
+                else if (valueParentNode.Left == valueNode) valueParentNode.Left = valueNode.Left;
+                else valueParentNode.Right = valueNode.Left;
+            }
+            else
+            {
+                BSTNode nodeToReplace = valueNode.Right;
+                BSTNode nodeToReplaceParent = valueNode;
+                while (nodeToReplace.Left != null)
+                {
+                    nodeToReplaceParent = nodeToReplace;
+                    nodeToReplace = nodeToReplace.Left;
+                }
+                valueNode.Data = nodeToReplace.Data;
+                if (nodeToReplaceParent.Left == nodeToReplace) nodeToReplaceParent.Left = nodeToReplace.Right;
+                else nodeToReplaceParent.Right = nodeToReplace.Right;
+            }
+        }
+
+        #endregion
+
+        #region Visitors
+
         public void VisitPostorderNonrecursive(Action<int> callback)
         {
             //                          3
@@ -34,7 +108,7 @@ namespace Dsal
                     {
                         visitingNode = currNode.Right;
                     }
-                    else 
+                    else
                     {
                         callback(currNode.Data);
                         lastVisitedNode = visitStack.Pop();
@@ -132,6 +206,11 @@ namespace Dsal
             VisitPostorderRecursive(nodeToVisit.Right, callback);
             callback(nodeToVisit.Data);
         }
+
+        #endregion
+
+        #region Add node
+
         public void Add(int value)
         {
             BSTNode nodeToAdd = new BSTNode() { Data = value };
@@ -168,5 +247,7 @@ namespace Dsal
                 }
             }
         }
+
+        #endregion
     }
 }
