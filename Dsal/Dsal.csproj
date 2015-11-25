@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MaxBinaryHeap.cs" />
     <Compile Include="BST.cs" />
     <Compile Include="LinkedList.cs" />
     <Compile Include="Node.cs" />
