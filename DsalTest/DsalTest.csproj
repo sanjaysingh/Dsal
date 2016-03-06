@@ -72,8 +72,9 @@
     <Compile Include="LinkedList\ReverseLinkedListSpec.cs" />
     <Compile Include="LinkedList\RemoveNthFromLastFromLinkedListSpec.cs" />
     <Compile Include="LinkedList\RemoveItemFromLinkedListSpec.cs" />
+    <Compile Include="MaxBinaryHeap\PushItemToMaxBinaryHeapSpec.cs" />
+    <Compile Include="MaxBinaryHeap\PopItemFromMaxBinaryHeapSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MaxBinaryHeapTest.cs" />
     <Compile Include="LinkedList\DeleteDuplicatesFromLinkedListSpec.cs" />
   </ItemGroup>
   <ItemGroup>
