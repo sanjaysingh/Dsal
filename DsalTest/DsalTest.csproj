@@ -62,11 +62,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BinarySearchTree\RecursivePostorderTraverseSpec.cs" />
+    <Compile Include="BinarySearchTree\RemoveItemFromBinarySearchTreeSpec.cs" />
+    <Compile Include="BinarySearchTree\RecursivePreorderTraverseSpec.cs" />
+    <Compile Include="BinarySearchTree\RecursiveInorderTraverseSpec.cs" />
+    <Compile Include="BinarySearchTree\NonRecursiveInorderTraverseSpec.cs" />
+    <Compile Include="BinarySearchTree\NonRecursivePreorderTraverseSpec.cs" />
+    <Compile Include="BinarySearchTree\NonRecursivePostorderTraverseSpec.cs" />
     <Compile Include="LinkedList\ReverseLinkedListSpec.cs" />
     <Compile Include="LinkedList\RemoveNthFromLastFromLinkedListSpec.cs" />
     <Compile Include="LinkedList\RemoveItemFromLinkedListSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BSTTest.cs" />
     <Compile Include="MaxBinaryHeapTest.cs" />
     <Compile Include="LinkedList\DeleteDuplicatesFromLinkedListSpec.cs" />
   </ItemGroup>
@@ -79,6 +85,7 @@
       <Name>Dsal</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

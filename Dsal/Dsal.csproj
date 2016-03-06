@@ -41,6 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlgorithmBase.cs" />
+    <Compile Include="BinarySearchTree\RemoveItemFromBinarySearchTree.cs" />
+    <Compile Include="BinarySearchTree\BinaryTreeNodeWithParent.cs" />
+    <Compile Include="BinarySearchTree\FindItemInBinarySearchTree.cs" />
+    <Compile Include="BinarySearchTree\NonRecursivePostorderTraverse.cs" />
     <Compile Include="IAlgorithm.cs" />
     <Compile Include="LinkedList\ConvertToListFromLinkedList.cs" />
     <Compile Include="LinkedList\ReverseLinkedList.cs" />
@@ -50,15 +54,19 @@
     <Compile Include="LinkedList\AddItemToLinkedList.cs" />
     <Compile Include="LinkedList\DeleteDuplicatesFromLinkedList.cs" />
     <Compile Include="MaxBinaryHeap.cs" />
-    <Compile Include="BST.cs" />
     <Compile Include="LinkedList\DsalLinkedList.cs" />
-    <Compile Include="Node.cs" />
+    <Compile Include="LinkedList\LinkedListNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BSTNode.cs" />
+    <Compile Include="BinarySearchTree\NonRecursivePreorderTraverse.cs" />
+    <Compile Include="BinarySearchTree\NonRecursiveInorderTraverse.cs" />
+    <Compile Include="BinarySearchTree\RecursiveInorderTraverse.cs" />
+    <Compile Include="BinarySearchTree\RecursivePreorderTraverse.cs" />
+    <Compile Include="BinarySearchTree\RecursivePostorderTraverse.cs" />
+    <Compile Include="BinarySearchTree\AddAnItemToBinarySearchTree.cs" />
+    <Compile Include="BinarySearchTree\DsalBinarySearchTree.cs" />
+    <Compile Include="BinarySearchTree\DsalBinaryTreeNode.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tree\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

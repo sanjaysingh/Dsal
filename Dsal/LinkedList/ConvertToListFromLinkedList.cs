@@ -19,7 +19,7 @@ namespace Dsal.LinkedList
 
         protected override void OnExecute()
         {
-            Node currNode = linkedList.Head;
+            LinkedListNode currNode = linkedList.Head;
             while (currNode != null)
             {
                 resultList.Add(currNode.Data);

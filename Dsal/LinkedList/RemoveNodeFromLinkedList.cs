@@ -9,9 +9,9 @@ namespace Dsal.LinkedList
     public class RemoveNodeFromLinkedList : AlgorithmBase
     {
         private DsalLinkedList linkedList;
-        private Node nodeToRemove;
-        private Node prevNode;
-        public RemoveNodeFromLinkedList(DsalLinkedList linkedList, Node nodeToRemove, Node prevNode)
+        private LinkedListNode nodeToRemove;
+        private LinkedListNode prevNode;
+        public RemoveNodeFromLinkedList(DsalLinkedList linkedList, LinkedListNode nodeToRemove, LinkedListNode prevNode)
         {
             this.linkedList = linkedList;
             this.nodeToRemove = nodeToRemove;

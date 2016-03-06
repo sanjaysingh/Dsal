@@ -17,8 +17,8 @@ namespace Dsal.LinkedList
 
         protected override void OnExecute()
         {
-            Node currNode = linkedList.Head;
-            Node previous = null;
+            LinkedListNode currNode = linkedList.Head;
+            LinkedListNode previous = null;
             Dictionary<int, bool> valuesHash = new Dictionary<int, bool>();
             //
             // 1-->2-->1-->3

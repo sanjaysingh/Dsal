@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dsal
+namespace Dsal.BinarySearchTree
 {
-    public class Node
+    public class DsalBinarySearchTree
     {
-        public int Data { get; set; }
-
-        public Node Next { get; set; }
+        public DsalBinaryTreeNode Root {get; set; } 
     }
 }

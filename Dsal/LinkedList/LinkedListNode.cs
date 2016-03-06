@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dsal
+namespace Dsal.LinkedList
 {
-    public class BSTNode
+    public class LinkedListNode
     {
         public int Data { get; set; }
 
-        public BSTNode Left { get; set; }
-
-        public BSTNode Right { get; set; }
+        public LinkedListNode Next { get; set; }
     }
 }

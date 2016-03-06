@@ -18,9 +18,9 @@ namespace Dsal.LinkedList
 
         protected override void OnExecute()
         {
-            Node currNode = linkedList.Head;
-            Node nthNode = null;
-            Node nMinus1stNode = null;
+            LinkedListNode currNode = linkedList.Head;
+            LinkedListNode nthNode = null;
+            LinkedListNode nMinus1stNode = null;
             int currentNodeIndex = 1;
             while (currNode != null)
             {
