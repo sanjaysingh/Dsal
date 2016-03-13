@@ -51,6 +51,7 @@
     <Compile Include="LinkedList\AddItem.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="LinkedList\ReversePrint.cs" />
     <Compile Include="LinkedList\ToList.cs" />
     <Compile Include="LinkedList\DsalLinkedList.cs">
       <SubType>Code</SubType>

@@ -75,6 +75,7 @@
     <Compile Include="BinarySearchTree\TraversePreorderRecursiveSpec.cs" />
     <Compile Include="BinarySearchTree\TraverseInorderRecursiveSpec.cs" />
     <Compile Include="BinarySearchTree\TraverseInorderNonrecursiveSpec.cs" />
+    <Compile Include="LinkedList\ReversePrintSpec.cs" />
     <Compile Include="LinkedList\ReverseLinkedListSpec.cs" />
     <Compile Include="LinkedList\RemoveItemSpec.cs" />
     <Compile Include="LinkedList\RemoveNthFromLastSpec.cs" />
