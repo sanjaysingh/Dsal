@@ -6,17 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dsal.LinkedList
 {
-    public class RemoveItemFromLinkedList : AlgorithmBase
+    public static class RemoveItemExtension 
     {
-        private DsalLinkedList linkedList;
-        private int item;
-        public RemoveItemFromLinkedList(DsalLinkedList linkedList, int item)
-        {
-            this.linkedList = linkedList;
-            this.item = item;
-        }
-
-        protected override void OnExecute()
+        public static DsalLinkedList RemoveItem(this DsalLinkedList linkedList, int item)
         {
             LinkedListNode currentNode = linkedList.Head;
             LinkedListNode prevNode = null;
@@ -28,9 +20,11 @@ namespace Dsal.LinkedList
             }
             if (currentNode != null)
             {
-                new RemoveNodeFromLinkedList(linkedList, currentNode, prevNode).Execute();
+                linkedList.RemoveNode(currentNode, prevNode);
                 linkedList.Count--;
             }
+
+            return linkedList;
         }
     }
 }

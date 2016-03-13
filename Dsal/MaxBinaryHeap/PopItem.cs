@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dsal.MaxBinaryHeap
 {
-    public static class PopItemFromMaxBinaryHeap 
+    public static class PopItemExtension 
     {
         public static int? Pop(this BstMaxBinaryHeap heap)
         {

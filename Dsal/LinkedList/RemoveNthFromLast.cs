@@ -6,17 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dsal.LinkedList
 {
-    public class RemoveNthFromLastFromLinkedList : AlgorithmBase
+    public static class RemoveNthFromLastExtension 
     {
-        private DsalLinkedList linkedList;
-        private int n;
-        public RemoveNthFromLastFromLinkedList(DsalLinkedList linkedList, int n)
-        {
-            this.linkedList = linkedList;
-            this.n = n;
-        }
-
-        protected override void OnExecute()
+        public static DsalLinkedList RemoveNthFromLast(this DsalLinkedList linkedList, int n)
         {
             LinkedListNode currNode = linkedList.Head;
             LinkedListNode nthNode = null;
@@ -36,8 +28,7 @@ namespace Dsal.LinkedList
                 currNode = currNode.Next;
                 currentNodeIndex++;
             }
-
-            new RemoveNodeFromLinkedList(linkedList, nthNode, nMinus1stNode).Execute();
+            return linkedList.RemoveNode(nthNode, nMinus1stNode);
         }
     }
 }

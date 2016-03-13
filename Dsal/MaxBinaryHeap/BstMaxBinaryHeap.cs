@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dsal
 {
-    public interface IAlgorithm
+    public class BstMaxBinaryHeap
     {
-        void Execute();
+        public int[] Data { get; set; }
+        public int Count { get; set; }
     }
 }

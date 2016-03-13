@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dsal.MaxBinaryHeap
 {
-    public static class BuildMaxBinaryHeap 
+    public static class BuildFromExtension 
     {
         public static BstMaxBinaryHeap BuildFrom(this BstMaxBinaryHeap heap, int[] data)
         {

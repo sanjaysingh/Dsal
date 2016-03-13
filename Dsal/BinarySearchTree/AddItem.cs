@@ -6,18 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dsal.BinarySearchTree
 {
-    public class AddAnItemToBinarySearchTreeRecursive : AlgorithmBase
+    public static class AddItemExtension 
     {
-        DsalBinarySearchTree bst;
-        private int itemToAdd;
-
-        public AddAnItemToBinarySearchTreeRecursive(DsalBinarySearchTree bst, int itemToAdd)
-        {
-            this.bst = bst;
-            this.itemToAdd = itemToAdd;
-        }
-
-        protected override void OnExecute()
+        public static DsalBinarySearchTree AddItem(this DsalBinarySearchTree bst, int itemToAdd)
         {
             DsalBinaryTreeNode nodeToAdd = new DsalBinaryTreeNode() { Data = itemToAdd };
             if (bst.Root == null)
@@ -28,9 +19,10 @@ namespace Dsal.BinarySearchTree
             {
                 AddNode(nodeToAdd, bst.Root);
             }
+            return bst;
         }
 
-        private void AddNode(DsalBinaryTreeNode nodeToAdd, DsalBinaryTreeNode addToNode)
+        private static void AddNode(DsalBinaryTreeNode nodeToAdd, DsalBinaryTreeNode addToNode)
         {
             if (nodeToAdd.Data < addToNode.Data)
             {

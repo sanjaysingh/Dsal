@@ -6,16 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dsal.LinkedList
 {
-    public class ReverseLinkedList : AlgorithmBase
+    public static class ReverseExtension 
     {
-        private DsalLinkedList linkedList;
-        
-        public ReverseLinkedList(DsalLinkedList linkedList)
-        {
-            this.linkedList = linkedList;
-        }
-
-        protected override void OnExecute()
+        public static DsalLinkedList Reverse(this DsalLinkedList linkedList)
         {
             LinkedListNode currNode = linkedList.Head;
             LinkedListNode prevNode = null;
@@ -29,6 +22,8 @@ namespace Dsal.LinkedList
             }
             linkedList.Tail = linkedList.Head;
             linkedList.Head = prevNode;
+
+            return linkedList;
         }
     }
 }

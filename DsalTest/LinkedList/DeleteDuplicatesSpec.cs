@@ -4,7 +4,7 @@ using Dsal.LinkedList;
 using System.Collections.Generic;
 using FluentAssertions;
 
-namespace DsalTest
+namespace DsalTest.LinkedList
 {
     [TestClass]
     public class DeleteDuplicatesFromLinkedListSpec
@@ -14,14 +14,11 @@ namespace DsalTest
         {
             DsalLinkedList linkedList = new DsalLinkedList();
 
-            new AddItemToLinkedList(linkedList, new int[] { 1, 2, 1, 3, 3, 5 }).Execute();
-
-            new DeleteDuplicatesFromLinkedList(linkedList).Execute();
-
-            List<int> remainingItems = new List<int>();
-            new ConvertToListFromLinkedList(linkedList, remainingItems).Execute();
-
-            remainingItems.Should().BeEquivalentTo(1, 2, 3, 5);
+            linkedList
+                .AddItems(new int[] { 1, 2, 1, 3, 3, 5 })
+                .DeleteDuplicates()
+                .ToList()
+                .Should().BeEquivalentTo(1, 2, 3, 5);
         }
     }
 }

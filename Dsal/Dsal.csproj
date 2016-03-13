@@ -40,34 +40,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlgorithmBase.cs" />
-    <Compile Include="BinarySearchTree\RemoveItemFromBinarySearchTree.cs" />
+    <Compile Include="BinarySearchTree\AddItems.cs" />
+    <Compile Include="BinarySearchTree\RemoveItem.cs" />
     <Compile Include="BinarySearchTree\BinaryTreeNodeWithParent.cs" />
-    <Compile Include="BinarySearchTree\FindItemInBinarySearchTree.cs" />
-    <Compile Include="BinarySearchTree\NonRecursivePostorderTraverse.cs" />
-    <Compile Include="IAlgorithm.cs" />
-    <Compile Include="LinkedList\ConvertToListFromLinkedList.cs" />
-    <Compile Include="LinkedList\ReverseLinkedList.cs" />
-    <Compile Include="LinkedList\RemoveNthFromLastFromLinkedList.cs" />
-    <Compile Include="LinkedList\RemoveNodeFromLinkedList.cs" />
-    <Compile Include="LinkedList\RemoveItemFromLinkedList.cs" />
-    <Compile Include="LinkedList\AddItemToLinkedList.cs" />
-    <Compile Include="LinkedList\DeleteDuplicatesFromLinkedList.cs" />
-    <Compile Include="MaxBinaryHeap\BstMaxBinaryHeap.cs" />
-    <Compile Include="LinkedList\DsalLinkedList.cs" />
+    <Compile Include="BinarySearchTree\FindItem.cs" />
+    <Compile Include="BinarySearchTree\TraversePostorderNonrecursive.cs" />
+    <Compile Include="BinarySearchTree\TraversePostorderRecursive.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkedList\AddItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkedList\ToList.cs" />
+    <Compile Include="LinkedList\DsalLinkedList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkedList\Reverse.cs" />
+    <Compile Include="LinkedList\RemoveNthFromLast.cs" />
+    <Compile Include="LinkedList\RemoveNode.cs" />
+    <Compile Include="LinkedList\RemoveItem.cs" />
+    <Compile Include="LinkedList\DeleteDuplicates.cs" />
     <Compile Include="LinkedList\LinkedListNode.cs" />
-    <Compile Include="MaxBinaryHeap\BuildMaxBinaryHeap.cs" />
-    <Compile Include="MaxBinaryHeap\PopItemFromMaxBinaryHeap.cs" />
-    <Compile Include="MaxBinaryHeap\PushItemToMaxBinaryHeap.cs" />
-    <Compile Include="MaxBinaryHeap\HeapifyUpMaxBinaryHeap.cs" />
-    <Compile Include="MaxBinaryHeap\HeapifyDownMaxBinaryHeap.cs" />
+    <Compile Include="MaxBinaryHeap\BstMaxBinaryHeap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaxBinaryHeap\BuildFrom.cs" />
+    <Compile Include="MaxBinaryHeap\HeapifyDown.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaxBinaryHeap\HeapifyUp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaxBinaryHeap\PopItem.cs" />
+    <Compile Include="MaxBinaryHeap\PushItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BinarySearchTree\NonRecursivePreorderTraverse.cs" />
-    <Compile Include="BinarySearchTree\NonRecursiveInorderTraverse.cs" />
-    <Compile Include="BinarySearchTree\RecursiveInorderTraverse.cs" />
-    <Compile Include="BinarySearchTree\RecursivePreorderTraverse.cs" />
-    <Compile Include="BinarySearchTree\RecursivePostorderTraverse.cs" />
-    <Compile Include="BinarySearchTree\AddAnItemToBinarySearchTree.cs" />
+    <Compile Include="BinarySearchTree\TraversePreorderNonrecursive.cs" />
+    <Compile Include="BinarySearchTree\TraverseInOrderNonrecursive.cs" />
+    <Compile Include="BinarySearchTree\TraverseInorderRecursive.cs" />
+    <Compile Include="BinarySearchTree\TraversePreorderRecursive.cs" />
+    <Compile Include="BinarySearchTree\AddItem.cs" />
     <Compile Include="BinarySearchTree\DsalBinarySearchTree.cs" />
     <Compile Include="BinarySearchTree\DsalBinaryTreeNode.cs" />
   </ItemGroup>

@@ -6,23 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dsal.BinarySearchTree
 {
-    public class RemoveItemFromBinarySearchTree : AlgorithmBase
+    public static class RemoveItemExtension 
     {
-        DsalBinarySearchTree bst;
-        private int itemToRemove;
-
-        public RemoveItemFromBinarySearchTree(DsalBinarySearchTree bst, int itemToRemove)
-        {
-            this.bst = bst;
-            this.itemToRemove = itemToRemove;
-        }
-
-        protected override void OnExecute()
-        {
-            RemoveItem();
-        }
-
-        public void RemoveItem()
+        public static DsalBinarySearchTree RemoveItem(this DsalBinarySearchTree bst, int itemToRemove)
         {
             // 1. remove 6.         8
             //                  6
@@ -37,15 +23,13 @@ namespace Dsal.BinarySearchTree
             //              2       8
             //                  7
             //
-            BinaryTreeNodeWithParent itemToRemoveNode = new BinaryTreeNodeWithParent();
+            var itemToRemoveNode = bst.FindItem(itemToRemove);
 
-            new FindItemInBinarySearchTree(this.bst, this.itemToRemove, itemToRemoveNode);
-
-            if (itemToRemoveNode.Node == null) return;
+            if (itemToRemoveNode.Node == null) return bst;
 
             if (itemToRemoveNode.Node.Right == null)
             {
-                if (itemToRemoveNode.Parent == null) this.bst.Root = itemToRemoveNode.Node.Left;
+                if (itemToRemoveNode.Parent == null) bst.Root = itemToRemoveNode.Node.Left;
                 else if (itemToRemoveNode.Parent.Left == itemToRemoveNode.Node) itemToRemoveNode.Parent.Left = itemToRemoveNode.Node.Left;
                 else itemToRemoveNode.Parent.Right = itemToRemoveNode.Node.Left;
             }
@@ -62,6 +46,8 @@ namespace Dsal.BinarySearchTree
                 if (nodeToReplaceParent.Left == nodeToReplace) nodeToReplaceParent.Left = nodeToReplace.Right;
                 else nodeToReplaceParent.Right = nodeToReplace.Right;
             }
+
+            return bst;
         }
     }
 }

@@ -6,37 +6,24 @@ using System.Threading.Tasks;
 
 namespace Dsal.BinarySearchTree
 {
-    public class NonRecursivePreorderTraverse : AlgorithmBase
+    public static class TraversePreorderNonrecursiveExtension 
     {
-        DsalBinarySearchTree bst;
-        private List<int> traversedList;
-
-        public NonRecursivePreorderTraverse(DsalBinarySearchTree bst, List<int> traversedList)
-        {
-            this.bst = bst;
-            this.traversedList = traversedList;
-        }
-
-        protected override void OnExecute()
-        {
-            VisitPreorderNonrecursive();
-        }
-
-        private void VisitPreorderNonrecursive()
+        public static List<int> TraversePreorderNonrecursive(this DsalBinarySearchTree bst)
         {
             //                          3
             //                  1               5
             //                      2       4          
             //                      
             //
-            DsalBinaryTreeNode visitingNode = this.bst.Root;
+            var traversedList = new List<int>();
+            DsalBinaryTreeNode visitingNode = bst.Root;
             Stack<DsalBinaryTreeNode> visitStack = new Stack<DsalBinaryTreeNode>();
 
             while (visitStack.Count > 0 || visitingNode != null)
             {
                 if (visitingNode != null)
                 {
-                    this.traversedList.Add(visitingNode.Data);
+                    traversedList.Add(visitingNode.Data);
                     if (visitingNode.Right != null)
                         visitStack.Push(visitingNode.Right);
                     visitingNode = visitingNode.Left;
@@ -46,6 +33,8 @@ namespace Dsal.BinarySearchTree
                     visitingNode = visitStack.Pop();
                 }
             }
+
+            return traversedList;
         }
     }
 }

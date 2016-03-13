@@ -6,21 +6,11 @@ using System.Threading.Tasks;
 
 namespace Dsal.LinkedList
 {
-    public class RemoveNodeFromLinkedList : AlgorithmBase
+    public static class RemoveNodeExtension 
     {
-        private DsalLinkedList linkedList;
-        private LinkedListNode nodeToRemove;
-        private LinkedListNode prevNode;
-        public RemoveNodeFromLinkedList(DsalLinkedList linkedList, LinkedListNode nodeToRemove, LinkedListNode prevNode)
+        public static DsalLinkedList RemoveNode(this DsalLinkedList linkedList, LinkedListNode nodeToRemove, LinkedListNode prevNode)
         {
-            this.linkedList = linkedList;
-            this.nodeToRemove = nodeToRemove;
-            this.prevNode = prevNode;
-        }
-
-        protected override void OnExecute()
-        {
-            if (nodeToRemove == null) return;
+            if (nodeToRemove == null) return linkedList;
 
             if (prevNode == null)
             {
@@ -38,6 +28,8 @@ namespace Dsal.LinkedList
                     linkedList.Tail = prevNode;
                 }
             }
+
+            return linkedList;
         }
 
     }

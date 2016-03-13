@@ -6,32 +6,19 @@ using System.Threading.Tasks;
 
 namespace Dsal.BinarySearchTree
 {
-    public class NonRecursiveInorderTraverse : AlgorithmBase
+    public static class TraversePostorderNonrecursiveExtension 
     {
-        DsalBinarySearchTree bst;
-        private List<int> traversedList;
-
-        public NonRecursiveInorderTraverse(DsalBinarySearchTree bst, List<int> traversedList)
-        {
-            this.bst = bst;
-            this.traversedList = traversedList;
-        }
-
-        protected override void OnExecute()
-        {
-            VisitInorderNonrecursive();
-        }
-
-        public void VisitInorderNonrecursive()
+        public static List<int> TraversePostorderNonrecursive(this DsalBinarySearchTree bst)
         {
             //                          3
             //                  1               5
             //                      2       4          
             //                      
             //
-            DsalBinaryTreeNode visitingNode = this.bst.Root;
+            var traversedList = new List<int>();
+            DsalBinaryTreeNode visitingNode = bst.Root;
             Stack<DsalBinaryTreeNode> visitStack = new Stack<DsalBinaryTreeNode>();
-
+            DsalBinaryTreeNode lastVisitedNode = null;
             while (visitStack.Count > 0 || visitingNode != null)
             {
                 if (visitingNode != null)
@@ -41,11 +28,20 @@ namespace Dsal.BinarySearchTree
                 }
                 else
                 {
-                    DsalBinaryTreeNode currNode = visitStack.Pop();
-                    this.traversedList.Add(currNode.Data);
-                    visitingNode = currNode.Right;
+                    DsalBinaryTreeNode currNode = visitStack.Peek();
+                    if (currNode.Right != null && currNode.Right != lastVisitedNode)
+                    {
+                        visitingNode = currNode.Right;
+                    }
+                    else
+                    {
+                        traversedList.Add(currNode.Data);
+                        lastVisitedNode = visitStack.Pop();
+                    }
                 }
             }
+
+            return traversedList;
         }
     }
 }

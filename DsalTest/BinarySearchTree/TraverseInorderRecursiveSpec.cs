@@ -6,23 +6,20 @@ using FluentAssertions;
 namespace DsalTest.BinarySearchTree
 {
     [TestClass]
-    public class RecursiveInorderTraverseSpec
+    public class TraverseInorderRecursiveSpec
     {
         [TestMethod]
         public void RecursiveInorderTraverseShouldVisitNodesInCorrectOrder()
         {
-            DsalBinarySearchTree bst = new DsalBinarySearchTree();
             //                      5
             //                  3
             //              2       4
             //          1
-            List<int> dataToInsert = new List<int>() { 5, 3, 2, 1, 4 };
-            dataToInsert.ForEach(value => new AddAnItemToBinarySearchTreeRecursive(bst, value).Execute());
-
-            List<int> visitedData = new List<int>();
-            new RecursiveInorderTraverse(bst, visitedData).Execute();
-
-            visitedData.Should().BeInAscendingOrder();
+            DsalBinarySearchTree bst = new DsalBinarySearchTree();
+            bst
+                .AddItems(new List<int>() { 5, 3, 2, 1, 4 })
+                .TraverseInorderRecursive()
+                .Should().BeInAscendingOrder();
         }
     }
 }

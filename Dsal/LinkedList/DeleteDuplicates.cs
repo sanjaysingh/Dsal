@@ -6,16 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dsal.LinkedList
 {
-    public class DeleteDuplicatesFromLinkedList : AlgorithmBase
+    public static class DeleteDuplicatesExtension 
     {
-        private DsalLinkedList linkedList;
-
-        public DeleteDuplicatesFromLinkedList(DsalLinkedList linkedList)
-        {
-            this.linkedList = linkedList;
-        }
-
-        protected override void OnExecute()
+        public static DsalLinkedList DeleteDuplicates(this DsalLinkedList linkedList)
         {
             LinkedListNode currNode = linkedList.Head;
             LinkedListNode previous = null;
@@ -36,6 +29,8 @@ namespace Dsal.LinkedList
                 }
                 currNode = currNode.Next;
             }
+
+            return linkedList;
         }
     }
 }

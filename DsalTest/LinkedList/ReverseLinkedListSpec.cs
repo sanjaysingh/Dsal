@@ -4,7 +4,7 @@ using Dsal.LinkedList;
 using System.Collections.Generic;
 using FluentAssertions;
 
-namespace DsalTest
+namespace DsalTest.LinkedList
 {
     [TestClass]
     public class ReverseLinkedListSpec
@@ -13,15 +13,12 @@ namespace DsalTest
         public void Reverse5ItemsLinkedListShouldSucceed()
         {
             DsalLinkedList linkedList = new DsalLinkedList();
-            new AddItemToLinkedList(linkedList, new int[] { 5, 7, 10, 3, 9 }).Execute();
 
-            new ReverseLinkedList(linkedList).Execute();
-
-            List<int> remainingItems = new List<int>();
-            new ConvertToListFromLinkedList(linkedList, remainingItems).Execute();
-
-            remainingItems.Should().BeEquivalentTo(9, 3, 10, 7, 5);
+            linkedList
+                .AddItems(new int[] { 5, 7, 10, 3, 9 })
+                .Reverse()
+                .ToList()
+                .Should().BeEquivalentTo(9, 3, 10, 7, 5);
         }
-
     }
 }
