@@ -21,7 +21,7 @@ namespace DsalTest.BinarySearchTree
                 .AddItems(new List<int>() { 5, 3, 2, 1, 4 })
                 .RemoveItem(1)
                 .TraverseInorderRecursive()
-                .Should().ContainInOrder(2, 3, 4, 5);
+                .Should().ContainInOrder(2, 3, 4, 7);
         }
 
         [TestMethod]
