@@ -9,7 +9,7 @@ namespace Dsal.LinkedList
     public class DsalLinkedList
     {
         public LinkedListNode Head { get; set; }
-        public LinkedListNode Tail { get; set; }
+        public LinkedListNode Tail { get; set; } 
         public int Count { get; set; }
     }
 }
