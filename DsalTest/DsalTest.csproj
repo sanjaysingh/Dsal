@@ -84,6 +84,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LinkedList\DeleteDuplicatesSpec.cs" />
     <Compile Include="String\FindNpNPermutationsRecursiveTest.cs" />
+    <Compile Include="String\IsPalindromeTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
