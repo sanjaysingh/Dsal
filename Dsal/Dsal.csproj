@@ -83,7 +83,9 @@
     <Compile Include="BinarySearchTree\DsalBinarySearchTree.cs" />
     <Compile Include="BinarySearchTree\DsalBinaryTreeNode.cs" />
     <Compile Include="String\FindNpNPermutationsRecursive.cs" />
-    <Compile Include="String\IsPalindrome.cs" />
+    <Compile Include="String\IsPalindrome.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
