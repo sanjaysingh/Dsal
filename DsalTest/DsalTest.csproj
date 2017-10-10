@@ -62,6 +62,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BinarySearchTree\FindLowestCommonAncestorSpec.cs" />
+    <Compile Include="BinarySearchTree\FindLowestCommonAncestorWhenBothNodesKnownToExistSpec.cs" />
     <Compile Include="BinarySearchTree\RemoveItemSpec.cs">
       <SubType>Code</SubType>
     </Compile>

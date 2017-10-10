@@ -41,9 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BinarySearchTree\AddItems.cs" />
+    <Compile Include="BinarySearchTree\FindLowestCommonAncestor.cs" />
     <Compile Include="BinarySearchTree\RemoveItem.cs" />
     <Compile Include="BinarySearchTree\BinaryTreeNodeWithParent.cs" />
     <Compile Include="BinarySearchTree\FindItem.cs" />
+    <Compile Include="BinarySearchTree\FindLowestCommonAncestorWhenBothNodesKnownToExist.cs" />
     <Compile Include="BinarySearchTree\TraversePostorderNonrecursive.cs" />
     <Compile Include="BinarySearchTree\TraversePostorderRecursive.cs">
       <SubType>Code</SubType>
