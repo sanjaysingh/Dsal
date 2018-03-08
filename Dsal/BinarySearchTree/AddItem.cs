@@ -11,7 +11,6 @@ namespace Dsal.BinarySearchTree
         public static DsalBinarySearchTree AddItem(this DsalBinarySearchTree bst, int itemToAdd)
         {
             DsalBinaryTreeNode nodeToAdd = new DsalBinaryTreeNode() { Data = itemToAdd };
-
             if (bst.Root == null) 
             {
                 bst.Root = nodeToAdd;
@@ -20,6 +19,7 @@ namespace Dsal.BinarySearchTree
             {
                 AddNode(nodeToAdd, bst.Root);
             }
+
             return bst;
         }
 
