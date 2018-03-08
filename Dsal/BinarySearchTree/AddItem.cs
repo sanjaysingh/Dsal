@@ -12,7 +12,7 @@ namespace Dsal.BinarySearchTree
         {
             DsalBinaryTreeNode nodeToAdd = new DsalBinaryTreeNode() { Data = itemToAdd };
 
-            if (bst.Root == null)
+            if (bst.Root == null) 
             {
                 bst.Root = nodeToAdd;
             }
