@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace Dsal.Graph
 {
     public class DirectedGraph
-    {
+    { 
     }
 }
